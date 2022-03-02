@@ -29,3 +29,18 @@ This could be an intersting inclue
 #endif
 ```
 
+* for standard sum, it seems that gcc generate by itself some SSE operations:
+mmx0 and mmx1 registers are used
+and addss is called
+
+# results
+
+Without gcc optimisation, and size 2^20
+
+Eigen:         6624718 ns
+standard loop: 2464703 ns
+sse          :  904325 ns
+
+Eigen:          529044 ns
+standard loop: 1078758 ns
+sse          :  582928 ns
